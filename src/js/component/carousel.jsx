@@ -1,6 +1,8 @@
 import React from "react";
 import Vaporwave from "../../img/vaporwave.jpeg";
 import SoulGlo from "../../img/soulGlo.jpeg";
+import EdWood from "../../img/edWood.jpeg";
+import CarContent from "./carContent.jsx";
 import "../../styles/home.css";
 
 const Carousel = () => {
@@ -29,27 +31,24 @@ const Carousel = () => {
         ></button>
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src={Vaporwave} className="d-block w-100" alt="Vaporwave" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Latest</h5>
-            <p>Amber is drowning in the V A P O R W A V E</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src={SoulGlo} className="d-block w-100" alt="SoulGlo" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Music reviews</h5>
-            <p>Space here for the Soul Glo review</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img src="..." className="d-block w-100" alt="EdWood" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Movie reviews</h5>
-            <p>Space here for the Ed Wood review</p>
-          </div>
-        </div>
+        <CarContent
+          img={Vaporwave}
+          alt="Vaporwave"
+          title="Latest"
+          desc="Amber is drowning in the V A P O R W A V E"
+        />
+        <CarContent
+          img={SoulGlo}
+          alt="Soul Glo"
+          title="Soul Glo"
+          desc="Space here for the Soul Glo review"
+        />
+        <CarContent
+          img={EdWood}
+          alt="Ed Wood"
+          title="Ed Wood"
+          desc="Space here for the Ed Wood review"
+        />
       </div>
       <button
         className="carousel-control-prev"
