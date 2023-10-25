@@ -10,6 +10,17 @@ export const Navbar = () => {
         </Link>
         <div>
           <ul className="navbar-nav">
+            <form className="d-flex mx-2" role="search">
+              <input
+                className="form-control mx-2"
+                type="search"
+                placeholder="Search tags here"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
             <li className="nav-item dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle"
