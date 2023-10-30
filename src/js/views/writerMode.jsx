@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Heading from "../component/heading.jsx";
 
 export const WriterMode = () => {
@@ -47,6 +47,15 @@ export const WriterMode = () => {
               <label htmlFor="inputArtist" className="form-label">
                 Artist
               </label>
+              {artist == "" ? (
+                <button
+                  type="button"
+                  disabled
+                  className="btn btn-outline-danger"
+                >
+                  Write the artist's name
+                </button>
+              ) : null}
             </div>
             <div className="col-5 form-floating mb-3">
               <input
@@ -59,6 +68,15 @@ export const WriterMode = () => {
               <label htmlFor="inputProject" className="form-label">
                 Project
               </label>
+              {project == "" ? (
+                <button
+                  type="button"
+                  disabled
+                  className="btn btn-outline-danger"
+                >
+                  Write a name for your project
+                </button>
+              ) : null}
             </div>
             <div className="col form-floating">
               <select
@@ -72,6 +90,15 @@ export const WriterMode = () => {
                 <option value="Movies">Movies</option>
               </select>
               <label htmlFor="inputSelection">Select section</label>
+              {section == "" ? (
+                <button
+                  type="button"
+                  disabled
+                  className="btn btn-outline-danger"
+                >
+                  Select a section first
+                </button>
+              ) : null}
             </div>
           </div>
           <div className="row">
@@ -86,6 +113,15 @@ export const WriterMode = () => {
               <label htmlFor="inputTitle" className="form-label">
                 Title
               </label>
+              {title == "" ? (
+                <button
+                  type="button"
+                  disabled
+                  className="btn btn-outline-danger"
+                >
+                  Write a title for the article
+                </button>
+              ) : null}
             </div>
             <div className="col-4 form-floating mb-3">
               <input
@@ -98,6 +134,13 @@ export const WriterMode = () => {
               <label htmlFor="inputTags" className="form-label">
                 Tags
               </label>
+              <button
+                type="button"
+                disabled
+                className="btn btn-outline-secondary"
+              >
+                Use commas to separate tags
+              </button>
             </div>
             <div className="col-4 form-floating mb-3">
               <input
@@ -110,6 +153,15 @@ export const WriterMode = () => {
               <label htmlFor="inputURL" className="form-label">
                 Photo URL
               </label>
+              {photoUrl == "" ? (
+                <button
+                  type="button"
+                  disabled
+                  className="btn btn-outline-danger"
+                >
+                  Paste your photo URL above first
+                </button>
+              ) : null}
             </div>
           </div>
           <div className="row justify-content-center">
@@ -122,6 +174,15 @@ export const WriterMode = () => {
                 id="inputMessage"
               ></textarea>
               <label htmlFor="inputMessage">Text Here</label>
+              {message.length < 50 ? (
+                <button
+                  type="button"
+                  disabled
+                  className="btn btn-outline-danger"
+                >
+                  {50 - message.length} characters left
+                </button>
+              ) : null}
             </div>
           </div>
 
