@@ -14,6 +14,15 @@ export const WriterMode = () => {
   const [photoUrl, setPhotoUrl] = useState("");
   const navigate = useNavigate();
 
+  const checker = () => {
+    const info = [artist, project, title, photoUrl, section];
+    if (info.every((element) => element != "") && message.length >= 50) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   return (
     <div>
       <Heading title={`Writer Mode`} />
@@ -182,11 +191,17 @@ export const WriterMode = () => {
                 >
                   {50 - message.length} characters left
                 </button>
-              ) : null}
+              ) : (
+                `${message.length} characters`
+              )}
             </div>
           </div>
 
-          <button type="submit" className="btn btn-outline-secondary">
+          <button
+            type="submit"
+            className="btn btn-outline-secondary"
+            disabled={checker()}
+          >
             Submit
           </button>
         </div>
