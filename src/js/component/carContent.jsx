@@ -1,26 +1,26 @@
 import React from "react";
 
 //CarContent : slide for home's carousel
-// img = image path for background
+// img = img url for display
 // alt = alternative title in case the image doesn't load
-// title = slide's title (corresponding to each page on the website)
-// desc = small description for each slide
+// artist = artist name
+// project = project name
 // active by default = "Latest" slide
-const CarContent = ({ img, alt, title, desc }) => {
+const CarContent = ({ url, alt, artist, project }) => {
   return (
     <div
-      className={title == `Latest` ? "carousel-item active" : "carousel-item"}
+      className={artist == `Latest` ? "carousel-item active" : "carousel-item"}
       style={{ height: "400px" }}
     >
       <img
-        src={img}
+        src={url}
         className="d-block w-100 h-100"
         style={{ objectFit: "cover", objectPosition: "50% 25%" }}
         alt={alt}
       />
       <div className="carousel-caption d-none d-md-block bg-secondary bg-opacity-50">
-        <h5>{title}</h5>
-        <p>{desc}</p>
+        <h5>{artist}</h5>
+        <p>{project}</p>
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Vaporwave from "../../img/vaporwave.jpeg";
 import SoulGlo from "../../img/soulGlo.jpeg";
 import EdWood from "../../img/edWood.jpeg";
 import CarContent from "./carContent.jsx";
 import "../../styles/home.css";
+import { Context } from "../store/appContext.js";
 
 const Carousel = () => {
+  const { store, actions } = useContext(Context);
   return (
     <div id="carouselDesc" className="carousel slide">
       <div className="carousel-indicators">
@@ -32,22 +34,22 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner">
         <CarContent
-          img={Vaporwave}
+          url={Vaporwave}
           alt="Vaporwave"
-          title="Latest"
-          desc="Amber is drowning in the V A P O R W A V E"
+          artist="Latest"
+          project="Amber is drowning in the V A P O R W A V E"
         />
         <CarContent
-          img={SoulGlo}
+          url={store.Music[0]?.url}
           alt="Soul Glo"
-          title="Soul Glo"
-          desc="Space here for the Soul Glo review"
+          artist={store.Music[0]?.artist}
+          project={store.Music[0]?.project}
         />
         <CarContent
-          img={EdWood}
+          url={EdWood}
           alt="Ed Wood"
-          title="Ed Wood"
-          desc="Space here for the Ed Wood review"
+          artist="Ed Wood"
+          project="Space here for the Ed Wood review"
         />
       </div>
       <button
